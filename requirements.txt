@@ -1,1 +1,9 @@
+deepgram-sdk
+streamlit
+requests
+pytube
+fpdf
+python-docx
+groq
+python-dotenv
 
