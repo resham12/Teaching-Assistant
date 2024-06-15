@@ -6,4 +6,5 @@ fpdf
 python-docx
 groq
 python-dotenv
+pymupdf
 
