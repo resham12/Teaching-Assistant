@@ -12,9 +12,6 @@ from groq import Groq
 def get_temp_dir():
     return tempfile.mkdtemp()
 
-def reset_inputs():
-    st.session_state.clear()
-
 def download_youtube_audio(youtube_url, temp_dir):
     try:
         yt = YouTube(youtube_url)
