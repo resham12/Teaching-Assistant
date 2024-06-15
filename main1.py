@@ -84,7 +84,7 @@ def generate_notes(transcription, api_key, lesson_plan_text=None):
 
 def generate_quiz(transcription, api_key, num_questions):
     client = Groq(api_key=api_key)
-    prompt = f"Generate {num_questions} multiple-choice questions with answers given at the end for all the questions, keep a balance of easy , moderate and difficult questions from the following transcription:\n\n{transcription}"
+    prompt = f"Generate {num_questions} multiple-choice questions with answers given at the end for all the questions, keep a balance of asy , moderate and difficult questions from the following transcription:\n\n{transcription}"
     response = client.chat.completions.create(
         model="mixtral-8x7b-32768",
         messages=[{"role": "user", "content": prompt}]
@@ -105,8 +105,8 @@ def create_word_doc(text, file_name):
     doc.save(file_name)
 
 def render_homepage():
-    st.markdown("<h1 style='font-family:Georgia; color:#2C3E50; font-size:36px;'>AI-Powered Teaching Assistant</h1>", unsafe_allow_html=True)
-    st.write("<p style='font-family:Arial; font-size:18px; color:#34495E;'>Welcome to the AI-powered teaching assistant. This tool helps you generate lecture notes and quizzes from audio recordings and YouTube videos.</p>", unsafe_allow_html=True)
+    st.markdown("<h1 style='font-family:Georgia; font-size:36px;'>AI-Powered Teaching Assistant</h1>", unsafe_allow_html=True)
+    st.write("<p style='font-family:Arial; font-size:18px;'>Welcome to the AI-powered teaching assistant. This tool helps you generate lecture notes and quizzes from audio recordings and YouTube videos.</p>", unsafe_allow_html=True)
 
     st.header("API Keys")
     deepgram_api_key = st.text_input("Enter your Deepgram API key:")
