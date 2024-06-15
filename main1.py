@@ -84,7 +84,7 @@ def generate_notes(transcription, api_key, lesson_plan_text=None):
 
 def generate_quiz(transcription, api_key, num_questions):
     client = Groq(api_key=api_key)
-    prompt = f"Generate {num_questions} multiple-choice questions with answers given at the end for all the questions from the following transcription:\n\n{transcription}"
+    prompt = f"Generate {num_questions} multiple-choice questions with answers given at the end for all the questions, keep a balance of easy , moderate and difficult questions from the following transcription:\n\n{transcription}"
     response = client.chat.completions.create(
         model="mixtral-8x7b-32768",
         messages=[{"role": "user", "content": prompt}]
